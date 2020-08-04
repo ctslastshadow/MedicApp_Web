@@ -39,7 +39,7 @@
                                                     <h3><i class="fa fa-edit"></i> Ingreso de Datos</h3>
                                                 </div>
                                                 <div class="widget-content">
-                                                    <form (ngSubmit)="ingresarPoliza()" class="form-horizontal" role="form">
+                                                    <form class="form-horizontal" role="form">
                                                         <fieldset>
                                                             <legend>Información General</legend>
                                                             <div class="form-group">
@@ -47,7 +47,7 @@
                                                                 <div class="col-sm-9">
                                                                     <select id="idaseguradora" [(ngModel)]="idaseguradora" name="idaseguradora" class="form-control input-sm" type="text" placeholder=".input-sm" required>
 <option value="1" selected>Seguros Colonial (Quito)</option>
-<option value="2">Seguros Colnial QBE</option>
+<option value="2">Seguros Colonial QBE</option>
 <option value="3">Seguros Oriente</option>
 <option value="4">Aseguradora del Sur</option>
 <option value="5">Seguros Equinoccial</option>
@@ -72,13 +72,18 @@
                                                             <div class="form-group">
                                                                 <label for="ticket-type" class="col-sm-3 control-label">Contrato:</label>
                                                                 <div class="col-sm-9">
-                                                                    <input [(ngModel)]="idcontrato" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="idcontra" placeholder="Id de contrato" required>
+                                                                    <select id="idcontrato" [(ngModel)]="idcontrato" name="idcontrato" class="form-control input-sm" type="text" placeholder=".input-sm">
+                                                                                <option value="1" selected>Suministro e Instalación</option>
+                                                                                <option value="2">Acta de Entrega Definitiva</option>
+                                                                                <option value="3">Construcción de Modulares</option>
+                                                                                
+                                                                        </select>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="ticket-type" class="col-sm-3 control-label">Número de Póliza:</label>
                                                                 <div class="col-sm-9">
-                                                                    <input type="text" [(ngModel)]="numpoliza" [ngModelOptions]="{standalone: true}" class="form-control" id="numpol" placeholder="Número de Póliza" required>
+                                                                    <input type="number" [(ngModel)]="numpoliza" [ngModelOptions]="{standalone: true}" class="form-control" id="numpol" placeholder="Número de Póliza" min="1" max="50000" required>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -107,7 +112,7 @@ Anticipo:</label>
                                                                 <div class="col-sm-9">
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                                        <input type="date" [(ngModel)]="fpagoant" [ngModelOptions]="{standalone: true}" id="fpagoant" class="form-control">
+                                                                        <input type="date" [(ngModel)]="fpagoant" [ngModelOptions]="{standalone: true}" id="fpagoant" class="form-control" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -168,7 +173,7 @@ MB</em></p>
                                                             </div>
 
                                                             <div class="col-sm-offset-3 col-sm-9">
-                                                                <button type="submit" data-dismiss="modal" (click)="ingresarPoliza()" class="btn btn-success">Guardar Póliza</button>&nbsp;&nbsp;
+                                                                <button type="submit" data-dismiss="modal" (click)="ingresarPoliza(idaseguradora,idcobertura,idcontrato,idestado,numpoliza,fpagoant,finicob,vencini,vencfin,observaciones,numrenov,valini,valfin)" class="btn btn-success">Guardar Póliza</button>&nbsp;&nbsp;
                                                                 <input type="reset" class="btn btn-info" value="Limpiar Campos">
                                                             </div>
 
@@ -194,7 +199,7 @@ MB</em></p>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Modificar o Eliminar una Póliza</a>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Modificar una Póliza</a>
                     </h4>
                 </div>
                 <div id="collapse2" class="panel-collapse collapse">
@@ -238,11 +243,10 @@ MB</em></p>
                                     <td>{{objDatos.idcontrato.concepto}}</td>
                                     <td>{{objDatos.idcontrato.idadministrador.nombreadmin}}</td>
                                     <td>{{objDatos.numpoliza}}</td>
-                                    <td>{{objDatos.fechapagoanticipo}}</td>
-                                    <td>{{objDatos.fechainicialcobertura}}</td>
-                                    <td>{{objDatos.vencimientofechainicial}}</td>
-                                    <td>{{objDatos.vencimientofechafinal}}</td>
-
+                                    <td>{{objDatos.fechapagoanticipo | date : format : timezone}}</td>
+                                    <td>{{objDatos.fechainicialcobertura | date : format : timezone}}</td>
+                                    <td>{{objDatos.vencimientofechainicial | date : format : timezone}}</td>
+                                    <td>{{objDatos.vencimientofechafinal | date : format : timezone}}</td>
                                     <td>{{objDatos.valorcoberturaactual}}</td>
                                     <td>{{objDatos.observaciones}}</td>
                                     <td>{{objDatos.numrenovaciones}}</td>
@@ -264,7 +268,6 @@ MB</em></p>
                                     <th>Fecha de Cobertura</th>
                                     <th>Fecha Inicial</th>
                                     <th>Fecha Final</th>
-
                                     <th>Valor de Cobertura Actual</th>
                                     <th>Observaciones</th>
                                     <th>N° Renov.</th>
@@ -281,21 +284,6 @@ MB</em></p>
         </div>
     </div>
 
-
-    <p>{{idaseguradora}}</p>
-    <p>{{idcobertura}}</p>
-    <p>{{idcontrato}}</p>
-    <p>{{numpoliza}}</p>
-    <p>{{idestado}}</p>
-    <p>{{finicob}}</p>
-    <p>{{fpagoant}}</p>
-    <p>{{vencini}}</p>
-    <p>{{vencfin}}</p>
-    <p>{{observaciones}}</p>
-    <p>{{numrenov}}</p>
-    <p>{{valini}}</p>
-    <p>{{valfin}}</p>
-    <p>{{polpdf}}</p>
 </body>
 
 </html>

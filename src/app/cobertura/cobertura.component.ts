@@ -67,6 +67,9 @@ export class CoberturaComponent implements OnInit {
   }
 
   async ingresarCobertura(descripcion){    
+    if(descripcion==undefined)
+    window.alert('Error! Descripción Vacía');
+    else {  
     if ((descripcion.length>=20)||(descripcion.length<4))  {
       window.alert('Error! Descripción no Válida');
     } else{ 
@@ -81,7 +84,7 @@ export class CoberturaComponent implements OnInit {
               $('#dt').DataTable();
             }); 
             window.alert('Cobertura Ingresada Correctamente');
-     
+          }
     }
   }
   

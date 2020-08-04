@@ -66,10 +66,30 @@ export class PolizasComponent implements OnInit {
     } 
   }
  
-  ingresarPoliza() {  
-      window.alert('Error en el ingreso!!');
-      window.close();
+  async ingresarPoliza(idaseguradora,idcobertura,idcontrato,idestado,numpoliza,fpagoant,finicob,vencini,vencfin,observaciones,numrenov,valini,valfin) {  
+    if((idaseguradora==undefined)||(idcobertura==undefined)||(idcontrato==undefined)||(idestado==undefined)||(numpoliza==undefined)||(fpagoant==undefined)||(finicob==undefined)||(vencini==undefined)||(vencfin==undefined)||(valini==undefined)||(valfin==undefined))
+    window.alert('Error! Campos vacíos');
+    else {  
+    if ((valini.length>=10)||(valini.length<3)||(valfin.length>=10)||(valfin.length<3))  {
+      window.alert('Error! Campos no válidos');
+    } else{ 
+      const Auditoria = await new Promise<any>(resolve =>
+      this.servicios.ServicioWebIngresarPoliza(idaseguradora,idcobertura,idcontrato,idestado,numpoliza,fpagoant,finicob,vencini,vencfin,observaciones,numrenov,valini,valfin)
+      .subscribe(translated => {
+        resolve(translated)    
+      })); 
+      this.servicios.ServicioWebPruebaED().subscribe(polizas=>
+        {this.vecPoliza=polizas;});  
+        $(function (){
+          $('#dt1').DataTable();
+        });
+
+          window.alert('Estado Ingresado Correctamente la Poliza');         
+           window.close();
     }
+    }
+  }
+  
     buscarPoliza() {  
       window.alert('Datos encontrados!!');
       window.close();

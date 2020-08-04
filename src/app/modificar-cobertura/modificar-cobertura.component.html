@@ -4,13 +4,13 @@
         <h3><i class="fa fa-edit"></i> Modificación de Datos de Cobertura</h3>
     </div>
     <div class="widget-content">
-        <form (ngSubmit)="ingresarEstado()" class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form">
             <fieldset>
                 <legend>Información General</legend>
                 <div class="form-group">
                     <label for="ticket-type" class="col-sm-3 control-label">Descripción de la Cobertura:</label>
                     <div class="col-sm-9">
-                        <input [(ngModel)]="descripcion" [ngModelOptions]="{standalone: true}" type="text" value="Ejemplo de Estado a Modificar" class="form-control" id="descripcionestado" placeholder="Ingrese la Descripción" required>
+                        <input type="text" value="Ejemplo de Estado a Modificar" class="form-control" id="descripcionestado" placeholder="Ingrese la Descripción" required>
                     </div>
                 </div>
 

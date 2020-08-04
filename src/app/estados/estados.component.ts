@@ -58,6 +58,9 @@ export class EstadosComponent implements OnInit {
 }
 
 async ingresarEstado(descripcion){    
+  if(descripcion==undefined)
+     window.alert('Error! Descripción Vacía');
+     else {  
   if ((descripcion.length>=20)||(descripcion.length<4))  {
     window.alert('Error! Estado no Válido');
   } else{ 
@@ -72,7 +75,8 @@ async ingresarEstado(descripcion){
             $('#dt').DataTable();
           }); 
           window.alert('Estado Ingresado Correctamente');
-   
+          descripcion='';
+        }
   }
 }
 

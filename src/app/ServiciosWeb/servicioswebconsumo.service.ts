@@ -93,7 +93,7 @@ export class ServiciosWebConsumo {
     ServicioWebPruebaED1(){
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.get(this.urlPruebaEd + 'AD_Polizas/webresources/entidades.poliza/vencimiento/2019-07-05')
+        return this.http.get(this.urlPruebaEd + 'AD_Polizas/webresources/entidades.poliza/vencimiento/2019-07-10')
             .pipe(map(res => res.json()))
     }
     //Servicio web listar todas las polizas vencidas
@@ -128,6 +128,15 @@ ServicioWebIngresarEstado(descripcionestado) {
     var parametros = descripcionestado;
     headers.append('Content-Type', 'application/json');
     return this.http.put(this.urlPruebaEd+'AD_Polizas/webresources/entidades.tipoestado/ingresarestado/'+parametros,parametros)
+        .pipe(map(res => res.text))
+}
+
+//Servicio Web para Ingresar un Estado
+ServicioWebIngresarPoliza(idaseguradora,idcobertura,idcontrato,idestado,numpoliza,fpagoant,finicob,vencini,vencfin,observaciones,numrenov,valini,valfin) {
+    let headers = new Headers();
+    var parametros = idaseguradora+"/"+idcobertura+"/"+idcontrato+"/"+idestado+"/"+numpoliza+"/"+fpagoant+"/"+finicob+"/"+vencini+"/"+vencfin+"/"+observaciones+"/"+numrenov+"/"+valini+"/"+valfin;
+    headers.append('Content-Type', 'application/json');
+    return this.http.put(this.urlPruebaEd+'AD_Polizas/webresources/entidades.poliza/ingresarPoliza/'+parametros,parametros)
         .pipe(map(res => res.text))
 }
 
