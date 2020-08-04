@@ -30,10 +30,7 @@
                             "src/assets/admin-king/theme/assets/css/my-custom-styles.css",
                             "src/assets/admin-king/theme/assets/css/demoswitch.css",
                             "node_modules/datatables.net-dt/css/jquery.dataTables.css",
-                            "node_modules/datatables.net-buttons-dt/css/buttons.dataTables.css",
-                            "assets/css/my-custom-styles.css",
-                            "assets/css/dataTables.min.css",
-                            "assets/css/DataTables-1.10.18/css/dataTables.bootstrap4.css"
+                            "node_modules/datatables.net-buttons-dt/css/buttons.dataTables.css"
                         ],
                         "scripts": [
                             "src/assets/admin-king/theme/assets/js/jquery/jquery-2.1.0.min.js",
@@ -42,17 +39,13 @@
                             "src/assets/admin-king/theme/assets/js/plugins/bootstrap-tour/bootstrap-tour.custom.js",
                             "src/assets/admin-king/theme/assets/js/plugins/jquery-slimscroll/jquery.slimscroll.min.js",
                             "node_modules/popper.js/dist/umd/popper.min.js",
-                            "assets/js/king-common.js",
-                            "assets/js/plugins/jquery-mapael/jquery.mapael.js",
-                            "assets/js/king-chart-stat.js",
-                            "assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker.js",
-                            "assets/js/plugins/jqgrid/jquery.jqGrid.min.js",
-                            "node_modules/jszip/dist/jszip.js",
-                            "assets/js/king-components.js",
-                            "assets/js/dropzone.js",
-                            "node_modules/jquery/dist/jquery.js",
                             "node_modules/datatables.net/js/jquery.dataTables.js",
-                            "assets/css/DataTables-1.10.18/js/dataTables.bootstrap4.min.js"
+                            "node_modules/jszip/dist/jszip.js",
+                            "node_modules/datatables.net-buttons/js/dataTables.buttons.js",
+                            "node_modules/datatables.net-buttons/js/buttons.colVis.js",
+                            "node_modules/datatables.net-buttons/js/buttons.flash.js",
+                            "node_modules/datatables.net-buttons/js/buttons.html5.js",
+                            "node_modules/datatables.net-buttons/js/buttons.print.js"
                         ]
                     },
                     "configurations": {

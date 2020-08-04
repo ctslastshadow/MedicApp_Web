@@ -7,8 +7,8 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('Debe mostrar un Mensaje de Bienvenida', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Bienvenidos al Sistema de Control de Pólizas!');
+    expect(page.getParagraphText()).toEqual('Welcome to Capacitacion!');
   });
 });

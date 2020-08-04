@@ -16,30 +16,29 @@ import { PlantillaIntegradaComponent } from './Plantilla/plantilla-integrada/pla
 import { routing } from './app.routing';
 
 //Import Paginas
+import { Pagina1Component } from './pagina1/pagina1.component';
+import { Pagina2Component } from './pagina2/pagina2.component';
+import { Pagina3Component } from './pagina3/pagina3.component';
 
-
-import { IngresoPolizasComponent } from './ingreso-polizas/ingreso-polizas.component';
-import { IngresoEstadoComponent } from './ingreso-estado/ingreso-estado.component';
-import { IngresoCoberturaComponent } from './ingreso-cobertura/ingreso-cobertura.component';
-import { EstadosComponent } from './estados/estados.component';
-import { CoberturaComponent } from './cobertura/cobertura.component';
-import { ControlpanelComponent } from './controlpanel/controlpanel.component';
-import { PolizasComponent } from './polizas/polizas.component';
-import { ReportesComponent } from './reportes/reportes.component';
-import { ModificarComponent } from './modificar/modificar.component';
-import { ModificarEstadoComponent } from './modificar-estado/modificar-estado.component';
-import { ModificarCoberturaComponent } from './modificar-cobertura/modificar-cobertura.component';
 //Servicios
 import { ConfiguracionesUrl } from './ServiciosWeb/configuracionesUrl.service';
 import { ServiciosWebConsumo } from './ServiciosWeb/servicioswebconsumo.service';
 import { Mensajes } from './Recursos/Mensajes.services';
 import {ToolsService } from './Recursos/Tools.services';
-
-
-
-
-
-
+import { InicioComponent } from './inicio/inicio.component';
+import { AcercaMedicAppComponent } from './acerca-medic-app/acerca-medic-app.component';
+import { CardiologiaComponent } from './cardiologia/cardiologia.component';
+import { GinecologiaComponent } from './ginecologia/ginecologia.component';
+import { PediatriaComponent } from './pediatria/pediatria.component';
+import { CirugiaComponent } from './cirugia/cirugia.component';
+import { FarmaciaInfoComponent } from './farmacia-info/farmacia-info.component';
+import { LaboratorioInfoComponent } from './laboratorio-info/laboratorio-info.component';
+import { ConsultasInfoComponent } from './consultas-info/consultas-info.component';
+import { MedicAppInfoComponent } from './medic-app-info/medic-app-info.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { LoginComponent } from './login/login.component';
+import { NuevoComponent } from './nuevo/nuevo.component';
+import { MainAppComponent } from './main-app/main-app.component';
 
 
 @NgModule({
@@ -50,21 +49,23 @@ import {ToolsService } from './Recursos/Tools.services';
     AppContentComponent,
     AppAsideComponent,
     PlantillaIntegradaComponent,
-   
-
-   
-    IngresoPolizasComponent,
-    IngresoEstadoComponent,
-    IngresoCoberturaComponent,
-    EstadosComponent,
-    CoberturaComponent,
-    ControlpanelComponent,
-    PolizasComponent,
-    ReportesComponent,
-    ModificarComponent,
-    ModificarEstadoComponent,
-    ModificarCoberturaComponent,
-  
+    Pagina1Component,
+    Pagina2Component,
+    Pagina3Component,
+    InicioComponent,
+    AcercaMedicAppComponent,
+    CardiologiaComponent,
+    GinecologiaComponent,
+    PediatriaComponent,
+    CirugiaComponent,
+    FarmaciaInfoComponent,
+    LaboratorioInfoComponent,
+    ConsultasInfoComponent,
+    MedicAppInfoComponent,
+    ContactoComponent,
+    LoginComponent,
+    NuevoComponent,
+    MainAppComponent,
   ],
   imports: [
     BrowserModule,

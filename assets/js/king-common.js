@@ -1,3 +1,12 @@
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-67690109-1', 'auto');
+	ga('send', 'pageview');
+
 $(document).ready(function(){
 
 	/************************
@@ -5,13 +14,13 @@ $(document).ready(function(){
 	/************************/
 
 	// set minimum height for content wrapper
-	/*$(window).bind("load resize scroll", function () {
+	$(window).bind("load resize scroll", function () {
 		calculateContentMinHeight();
-	});*/
+	});
 
-/*	function calculateContentMinHeight() {
+	function calculateContentMinHeight() {
 		$('#main-content-wrapper').css('min-height', $('#left-sidebar').height());
-	}*/
+	}
 
 
 	/************************
@@ -102,7 +111,7 @@ $(document).ready(function(){
 
 	function determineSidebar() {
 
-		if( $(window).width() < 500) {
+		if( $(window).width() < 992) {
 			$('body').addClass('sidebar-float');
 
 		}else {
@@ -398,9 +407,9 @@ $(document).ready(function(){
 		var ringSound = new Audio();
 
 		if ( navigator.userAgent.match("Firefox/") ) {
-			ringSound.src = "assets/admin-king/theme/assets/audio/bell-ringing.ogg";
+			ringSound.src = "assets/audio/bell-ringing.ogg";
 		}else {
-			ringSound.src = "assets/admin-king/theme/assets/audio/bell-ringing.mp3";
+			ringSound.src = "assets/audio/bell-ringing.mp3";
 		}
 		
 		function ringIt() {
@@ -436,7 +445,7 @@ $(document).ready(function(){
 	/********************************************/
 
 	var kingTour = new Tour({
-		basePath: "edit/basepath/see/documentation/", // please see documentation for this setting
+		basePath: "/dashboard/kingadmin-v1.6.2/", // please see documentation for this setting
 		steps: [
 			{	
 				element: "#tour-searchbox",
@@ -503,7 +512,7 @@ $(document).ready(function(){
 		}
 	}
 
-	kingTour.init();
+	// kingTour.init();
 
 	$('#start-tour').click( function() {
 		if(kingTour.ended()) {
