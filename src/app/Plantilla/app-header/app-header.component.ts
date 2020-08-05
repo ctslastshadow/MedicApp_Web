@@ -8,14 +8,14 @@ import { Router } from '@angular/router';
 })
 export class AppHeaderComponent implements OnInit {
 
-  constructor() {
-
-  }
+  constructor( private router:Router) { }
 
   ngOnInit() {
 
   }
 
-
+  gotoMedicApp(){
+    this.router.navigate(['MedicApp']);
+    } 
 
 }
